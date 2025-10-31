@@ -1,0 +1,108 @@
+Create CLI react Native project
+-------------------------------
+npx @react-native-community/cli@latest init AwesomeProject
+
+Splash Screen installtion guide
+--------------------------------
+
+1) create mobile icon
+	a) icon size 1024px X 1024 px, create any online toole and download icon with different size
+	b)unzip the download file
+	c) copy all the folder into android\app\src\main\res\
+	d) install "npm i react-native-splash-screen --save"
+	e) or check from "https://blog.logrocket.com/building-splash-screens-react-native/"
+	f) import into "android/app/src/main/java/com/splashscreen/MainActivity.kt"
+		import android.os.Bundle; 
+		import org.devio.rn.splashscreen.SplashScreen;
+	g) after name i.e. override fun getMainComponentName(): String = "SplashScreen"
+		override fun onCreate(savedInstanceState: Bundle?) {
+    			SplashScreen.show(this)
+    			super.onCreate(savedInstanceState)
+		}
+	h) create a file launch_screen.xml inside the layout directory and add the following:
+		-----------
+			<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashActivity"
+    android:background="@drawable/background"
+    >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="28dp">
+
+        <ImageView
+        android:id="@+id/image"
+            android:layout_width="578dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20sp"
+            android:layout_marginBottom="20sp"
+            android:layout_gravity="center_horizontal"
+            android:elevation="5dp"
+            android:src="@drawable/crestest_learning" />
+
+        <ImageView
+        android:id="@+id/bigimage"
+            android:layout_width="578dp"
+            android:layout_height="400dp"
+            android:layout_marginTop="20sp"
+            android:layout_marginBottom="20sp"
+            android:layout_gravity="center_horizontal"
+            android:elevation="5dp"
+            android:src="@drawable/splash_screen_imag" />
+
+
+    </LinearLayout>
+
+
+</FrameLayout>
+
+.gradle.properties
+add below line---------------------
+android.useAndroidX=true
+android.enableJetifier=true
+
+--------------
+create change create color.xml, string.xml and style.xml in value folder
+
+and splash screen hide in app.js or tsx
+ // SplashScreen.hide();
+        setTimeout(() => {
+            SplashScreen.hide()
+        }, 1000)
+
+
+NDK version
+26.3.11579264
+
+in package.json
+"react-native": {
+  "codegenConfig": {
+    "react-native-config": {
+      "enabled": false
+    }
+  }
+}
+
+react-native-config.js
+
+module.exports = {
+  dependencies: {
+    'react-native-config': {
+      platforms: {
+        android: null, // disables autolinking for Android
+      },
+    },
+  },
+};
+
+--------------
+npx @react-native-community/cli@latest init PratapProject81 --version 0.81.0
