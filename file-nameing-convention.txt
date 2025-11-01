@@ -1,0 +1,130 @@
+🗂️ 1. File Names (Components, Hooks, Utils, etc.)
+✅ Components
+
+Use PascalCase (a.k.a. UpperCamelCase) for React components:
+
+HomeScreen.tsx
+UserProfileCard.tsx
+LoginButton.tsx
+AppNavigator.tsx
+
+
+Each component gets its own folder if it has multiple related files:
+
+components/
+  UserProfileCard/
+    index.tsx
+    styles.ts
+    types.ts
+
+
+Or:
+
+components/
+  UserProfileCard.tsx
+
+✅ Hooks
+
+Use camelCase and always start with use:
+
+useAuth.ts
+useFetchData.ts
+useTheme.ts
+
+✅ Utility / Helper Files
+
+Use camelCase:
+
+formatDate.ts
+calculateTotal.ts
+validateEmail.ts
+
+✅ Stylesheets
+
+Use camelCase or styles.ts when local to a component:
+
+HomeScreen.styles.ts
+styles.ts
+
+✅ Context / Providers
+
+Use PascalCase for context providers:
+
+AuthContext.tsx
+ThemeProvider.tsx
+
+✅ Navigation Files
+
+Use PascalCase for navigators:
+
+AppNavigator.tsx
+AuthStackNavigator.tsx
+MainTabNavigator.tsx
+
+✅ Types / Interfaces
+
+Use PascalCase for TypeScript files that define types:
+
+types.ts
+UserTypes.ts
+navigationTypes.ts
+
+✅ Config / Constants
+
+Use UPPER_CASE for exported constants, and file names in camelCase:
+
+apiConfig.ts
+appConstants.ts
+colors.ts
+
+✅ Assets
+
+For images, fonts, etc., use kebab-case:
+
+/assets/images/
+  user-avatar.png
+  app-logo.png
+
+📁 2. Folder Naming Conventions
+
+Use camelCase for folders unless they represent a React component (then PascalCase):
+
+/src/
+  components/
+  screens/
+  hooks/
+  utils/
+  contexts/
+  navigation/
+  assets/
+
+
+Inside /screens, you might have:
+
+screens/
+  Home/
+    index.tsx
+    styles.ts
+  Profile/
+    index.tsx
+    styles.ts
+
+✅ Summary Table
+Category	Convention	Example
+Component	PascalCase	UserProfileCard.tsx
+Screen	PascalCase	HomeScreen.tsx
+Hook	camelCase	useAuth.ts
+Utils	camelCase	formatDate.ts
+Styles	camelCase / styles.ts	styles.ts
+Folder	camelCase	components/, screens/
+Context	PascalCase	AuthContext.tsx
+Asset file	kebab-case	user-avatar.png
+🧠 Pro Tip
+
+If you’re working in a team project, it’s best to add these conventions to your documentation or enforce them using:
+
+ESLint rules (eslint-plugin-filenames)
+
+Prettier for formatting consistency
+
+Would you like me to give you a recommended folder structure for a production-grade React Native + TypeScript project (following this naming convention)?

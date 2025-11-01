@@ -1,0 +1,30 @@
+react-native-vector-icons install process
+
+install below both package
+npm i react-native-vector-icons
+npm install --save-dev @types/react-native-vector-icons
+
+Edit android/app/build.gradle (NOT android/build.gradle) and add:
+apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
+
+done.
+npm start -- --reset-cache
+./gradlew clean
+
+rebuild
+
+Icon show in process in file
+
+import Icon from 'react-native-vector-icons/FontAwesome'
+import IconMaterialIcon from 'react-native-vector-icons/MaterialIcons';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+
+
+<View style={{ flexDirection: 'row' }}>
+          <Icon name="rocket" size={30} color="#900" />
+          <IconMaterialIcon name="emoji-people" size={30} color="#900" />
+          <IconMaterialIcon name="emoji-people" size={30} color="#900" />
+          <IconMaterialIcon name="add-shopping-cart" size={30} color="#900" />
+          <IconMaterialIcon name="sports-football" size={30} color="rgba(17, 182, 39, 1)" />
+          <FontAwesome5 name="youtube-square" size={30} color="rgba(221, 139, 16, 1)" />
+        </View>
