@@ -24,6 +24,9 @@ import IconMaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 import LottieView from 'lottie-react-native';
+import Man from "../../assets/svg/geppetto-1475528.svg";
+import Rectangle from "../../assets/svg/Rectangle95.svg";
+
 
 const LoginScreen = ({ navigation }: any) => {
   const [email, setEmail] = useState("p1@g.com");
@@ -147,6 +150,10 @@ const LoginScreen = ({ navigation }: any) => {
               <LottieView ref={animationRef} loop={false} style={{ flex: 1 }} source={require('../../assets/Heart fav.json')} />
             </Pressable>
           </View>
+          <View style={styles.svg}>
+            <Man width={320} height={240} />
+            <Rectangle width={320} height={140} fill="#ff0000"/>
+          </View>
         </View>
       </SafeAreaView>
     </ScrollView>
@@ -219,10 +226,14 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     justifyContent: 'space-around',
     alignItems:'center'
-    
   },
   heart1: {
     height: 200,
      aspectRatio: 1,
+  },
+   svg: {
+    flexDirection:'column',
+    justifyContent: 'space-around',
+    alignItems:'center'
   },
 });
